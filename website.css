@@ -1,0 +1,247 @@
+* {
+    scroll-behavior: smooth;
+}
+
+/* General styles */
+body {
+    font-family: 'Itim', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem; /* Adjust header padding */
+}
+
+.service-image {
+    width: 100%; /* or specify a fixed size */
+    height: auto; /* maintain aspect ratio */
+    margin-bottom: 10px; /* space between image and text */
+}
+
+.service-button {
+    display: inline-block;
+    padding: 10px 15px; /* Padding for the button */
+    background-color: #007BFF; /* Button background color */
+    color: white; /* Button text color */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.service-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo/menu */
+    position: fixed; /* Fix navbar to the top */
+    top: 0; /* Position at the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    z-index: 1000; /* Ensure it appears above other content */
+    padding: 1rem 2rem; /* Padding for nav items */
+    background-color: #333; /* Background color */
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Push nav links to the right */
+}
+
+.nav-links {
+    display: flex; /* Show links in a row */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Padding for links */
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.menu-toggle {
+    display: none; /* Hide by default */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 18rem; /* Adjusted for mobile */
+    position: relative; /* This is to ensure text is positioned correctly */
+    background-image: url('image.png'); /* Change this to your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    overflow: hidden; /* Prevents overflow from moving text */
+}
+
+#hero-text {
+    position: absolute; /* Allow the text to move freely */
+    white-space: nowrap; /* Prevent text from wrapping */
+    transition: transform 0.5s ease; /* Smooth transition effect */
+    font-size: 2rem; /* Adjust font size as needed */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.hero .cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta:hover {
+    background-color: #555;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.content-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.service {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.service p {
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the menu toggle button on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide links initially */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        position: absolute; /* Position the dropdown menu */
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        background-color: #333; /* Match background */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        padding: 0; /* Reset padding */
+        margin: 0; /* Reset margin */
+    }
+
+    nav ul li {
+        width: 100%; /* Full width for each item */
+        text-align: center; /* Center text */
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* Stack logo and menu vertically */
+        align-items: flex-start; /* Align to the left */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        width: 100%; /* Full width for menu */
+    }
+
+    /* Adjust the hero padding for smaller screens */
+    .hero {
+        padding: 10rem 2rem; /* Reduce padding for mobile */
+        margin-top: 60px; /* Adjust to offset fixed navbar height */
+    }
+}
