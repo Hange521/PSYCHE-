@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // If the text moves out of view, reset it to the left
         if (position > heroSection.clientWidth) {
-            position = -700; // Reset to the left side
+            position = -500; // Reset to the left side
         }
 
         // Move the text to the new position
